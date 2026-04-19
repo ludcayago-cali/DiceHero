@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dice Corner Duel</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- THREE.js canvas container -->
+  <div id="canvas-container"></div>
+
+  <!-- HUD overlay -->
+  <div id="hud">
+    <div class="player-panel" id="panel-player">
+      <div class="panel-title">⚔️ HERO</div>
+      <div class="hp-bar-wrap">
+        <div class="hp-bar" id="player-hp-bar"></div>
+      </div>
+      <div class="hp-text" id="player-hp-text">HP: 10/10</div>
+    </div>
+
+    <div id="center-hud">
+      <div id="turn-info">YOUR TURN</div>
+      <div id="dice-result-display"></div>
+    </div>
+
+    <div class="player-panel" id="panel-bot">
+      <div class="panel-title">💀 ENEMY</div>
+      <div class="hp-bar-wrap">
+        <div class="hp-bar bot" id="bot-hp-bar"></div>
+      </div>
+      <div class="hp-text" id="bot-hp-text">HP: 10/10</div>
+    </div>
+  </div>
+
+  <!-- Roll dice button -->
+  <div id="roll-area">
+    <button id="roll-btn">🎲 Roll Dice</button>
+  </div>
+
+  <!-- Action modal -->
+  <div id="action-modal" class="hidden">
+    <div id="action-box">
+      <h2>⚔️ ADJACENT!</h2>
+      <p>Choose your action:</p>
+      <button id="btn-attack" class="action-btn attack-btn">⚔️ Attack (-2 HP)</button>
+      <button id="btn-heal" class="action-btn heal-btn">💚 Heal (+2 HP)</button>
+      <button id="btn-skip" class="action-btn skip-btn">⏭ Skip</button>
+    </div>
+  </div>
+
+  <!-- Win/Lose overlay -->
+  <div id="result-overlay" class="hidden">
+    <div id="result-box">
+      <div id="result-title"></div>
+      <div id="result-subtitle"></div>
+      <button id="restart-btn">🔄 Play Again</button>
+    </div>
+  </div>
+
+  <!-- Log -->
+  <div id="game-log">
+    <div id="log-entries"></div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="threeScene.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
